@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Freehand&family=Roboto+Mono&family=Ubuntu:wght@300;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 0 25px;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  background: url("./wallpaper.png");
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  filter: blur(2px);
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+input:focus {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  text-align: start;
+  background-color: transparent;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.location {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.currentTemperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.currentTemperature img {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+}
+
+.forecast {
+  margin-top: 100px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.nextDays {
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.nextDays img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .forecast {
+    width: 300px;
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 150px;
+  }
+
+  body:before {
+    background-position: center;
+  }
+}
